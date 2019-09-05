@@ -1,0 +1,14 @@
+{% extends "registration.html" %}
+{% block body %}    
+  <body>
+    <center>
+        <center><h3>Account has been created. Now you can login to bSocial.</h3></center> 
+        <button onclick="redirect()">Login</button> 
+        </center>
+        <script>
+          function redirect() {
+            location.replace("/")
+          }
+        </script>
+  </body>
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <center><h1> Sign In to bSocial</h1></center>
+  </head>  
+<body>
+<center>
+        <form method="POST" action="">	
+                <table>
+                       <tr>			
+                               <td>				
+                                   Username/email:			
+                               </td>			
+                                <td>				
+                                   <input type="text" name="login_string" required>			
+                                </td>		
+                           </tr>
+                       <tr>			
+                               <td>				
+                                   Password:			
+                               </td>			
+                                <td>				
+                                   <input type="Password" name="Password" required>			
+                                </td>		
+                           </tr>
+               </table>
+               <br>
+               <button>Sign In</button> 
+           </form>
+           <br>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <!-- Do something with the message -->
+            {{ message }}
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</center>
+<br>
+<br>
+<center>
+<center><h3>If you do not have bScoial account, please Sign Up.</h3></center> 
+<button onclick="redirect()">Sign Up</button> 
+</center>
+<script>
+    function redirect() {
+      location.replace("/signup")
+    }
+</script>
+
+{% block body %}
+{% endblock %} 
+
+</body>
+</html>

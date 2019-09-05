@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <center><h1> Welcome to bSocial <button onclick="logout()"> Logout</button></h1>
+        <button onclick="goHome()">Home</button>
+    </center>
+  </head>
+  <br>  
+<body>
+<center>
+    <form method="POST" action="">	
+        <table>
+               <tr>			
+                       <td>				
+                           Say something to your friends:			
+                       </td>			
+                        <td>				
+                           <input type="text" name="post_text" required>
+                        <td>
+                            <input type="radio" name="post_privacy" value="public" checked> Public<br>
+                            <input type="radio" name="post_privacy" value="friends"> Friends only<br>	
+                        </td>		
+                        </td>		
+                   </tr>
+       </table>
+       <br>
+       <button>Post update</button> 
+   </form>
+   <br>
+</center>
+<div class="column" align="center" style="background-color:#aaa;">
+    {% for item in data %}
+    <table>
+         <tr>
+             <td>
+             <button value= {{item[0]}} onclick="redirect_profile(value)">Check profile</button> {{item[0]}} :</td>
+             <td>{{item[1]}} - {{item[3]}}<button value= {{item[4]}} onclick="redirect_post(value)">View post</button></td>
+             <br>
+         </tr>
+    </table>
+    {% endfor %}
+</div>
+<script>
+    function redirect_profile(value) {
+    location.replace(value)
+    }
+</script>
+<script>
+        function redirect_post(value) {
+        location.replace("/posts/" + value)
+        }
+    </script>
+<script>
+        function goHome() {
+          location.replace("/home")
+        }
+    </script>
+<script>
+    function logout() {
+      location.replace("/logout")
+    }
+</script>
+</body>
+</html>

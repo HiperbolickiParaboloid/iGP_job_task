@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="icon" href="data:,">
+      <center><h1> Sign Up to bSocial</h1></center>
+  </head> 
+<body>
+<center>
+<form method="POST" action="" >	
+     <table>
+            <tr>			
+                    <td>				
+                        Name:			
+                    </td>			
+                     <td>				
+                        <input type="text" name=Name required>			
+                     </td>		
+                </tr>
+            <tr>			
+                    <td>				
+                        Surname:			
+                    </td>			
+                     <td>				
+                        <input type="text" name=Surname required>			
+                     </td>		
+                </tr>	
+            <tr>			
+                <td>				
+                    Username:			
+                </td>			
+                  <td>				
+                    <input type="text" name=Username required>			
+                  </td>		
+            </tr>			
+           <tr>			
+               <td>				
+                   Email Address:			
+               </td>			
+                <td>				
+                   <input type="text" name=email required>			
+                </td>		
+           </tr>
+            <tr>
+                 <td>				
+                   Password:			
+                 </td>			
+                 <td>				
+                  <input type="Password" name=Password required>			
+                 </td>		
+            </tr>
+            <tr>
+                    <td>				
+                      Confirm Password:			
+                    </td>			
+                    <td>				
+                     <input type="Password" name=ConfirmPassword required>			
+                    </td>		
+              </tr>
+     </table>
+     <br>
+     <button>Sign Up</button>         
+</form>
+<br>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <!-- Do something with the message -->
+            {{ message }}
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</center>
+
+{% block body %}
+{% endblock %} 
+
+
+</body>
+</html>

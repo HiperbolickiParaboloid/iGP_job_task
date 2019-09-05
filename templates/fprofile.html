@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center>
+        <center><h1> Welcome to bSocial <button onclick="logout()"> Logout</button></h1>
+            <button onclick="goHome()">Home</button>
+        </center>
+
+    <h1>{{data[0][0]}}</h1>
+        <p>You are following this user.</p>
+        <form action="" method="POST">
+                <input type="submit" name="unfollow" value="Unfollow" />
+            </form> 
+        <br>
+        {% if False in data %}
+        <h4>No posts to show.</h4>
+        {% endif %}
+        {% if False not in data %}
+        <h4>Recent POSTS:</h4>
+        {% for item in data %}
+        <table>
+             <tr>
+                 <td>{{item[1]}} - {{item[3]}} <td> <button value= {{item[4]}} onclick="redirect_post(value)">View post</button></td></td>
+                 <br>
+             </tr>
+        </table>
+        {% endfor %}
+        {% endif %}
+        
+</center>
+<script>
+        function goHome() {
+          location.replace("/home")
+        }
+</script>
+<script>
+        function redirect_post(value) {
+        location.replace("/posts/" + value)
+        }
+    </script>
+<script>
+    function logout() {
+      location.replace("/logout")
+    }
+</script>
+</body>
+</html> 

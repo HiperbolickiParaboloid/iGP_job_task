@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center>
+        <center><h1> Welcome to bSocial <button onclick="logout()"> Logout</button></h1>
+            <button onclick="goHome()">Home</button>
+        </center>
+        {% for item in data[0] %}
+        <table>
+             <tr>
+                 <td><font size="5">{{data[0][0][0]}} posted: <b>{{item[1]}}</font></b></td>
+                 <br>
+             </tr>
+        </table>
+        {% endfor %}
+        {% for item in data[1] %}
+        <table>
+             <tr>
+                <td>
+                    <font size="2">{{item[0]}} commented :</font>
+                </td>
+                 <td>
+                     <font size="2"><b>{{item[2]}}</b> - {{item[3]}}</font>
+                </td>
+             </tr>
+        </table>
+        {% endfor %}
+    <form method="POST" action="">	
+            <table>
+                    <tr>						
+                            <td>				
+                                <input type="text" name="comment_text" required>
+                                <button>Add comment</button>			
+                            </td>		
+                        </tr>
+            </table> 
+        </form>
+</center>
+<script>
+        function goHome() {
+          location.replace("/home")
+        }
+</script>
+<script>
+    function logout() {
+      location.replace("/logout")
+    }
+</script>
+</body>
+</html> 
